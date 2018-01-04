@@ -32,7 +32,7 @@ $this->title = "Roles";
                     ],
                     'buttons' => [
                         'update' => function($url, $model, $key) {
-                            return Html::button('<i class="glyphicon glyphicon-edit"></i> Edit', ["data-id" => "$model->id", "data-url" => Url::to(["/users/role/update-role"]), "data-toggle" => "tooltip", "title" => "Edit", "class" => "btn btn-warning btn-xs btnEdit"]);
+                            return Html::button('<i class="glyphicon glyphicon-edit"></i> Edit', ["data-id" => "$model->id", "data-url" => Url::to(["/users/role/update"]), "data-toggle" => "tooltip", "title" => "Edit", "class" => "btn btn-warning btn-xs btnEdit"]);
                         },
                         'delete' => function($url, $model, $key) {
                             return Html::button('<i class="glyphicon glyphicon-trash"></i> Delete', ["data-id" => "$model->id","data-reloadDiv"=>Url::to(['/users/role/get-role']),"data-url" => Url::to(["/users/role/delete"]), "data-toggle" => "tooltip", "title" => "Delete", "class" => "btn btn-danger btn-xs btnDelete"]);

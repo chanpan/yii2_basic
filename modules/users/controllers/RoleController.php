@@ -42,6 +42,22 @@ class RoleController extends Controller{
             return $this->renderAjax("create",["model"=>$model]);
         }
     }
+    public function actionUpdate(){
+        if(\Yii::$app->request->isAjax){
+            $id = isset($_GET["id"]) ? $_GET["id"] : ""; 
+            $model = \app\modules\users\models\Roles::findOne($id);
+            if ($model->load(\Yii::$app->request->post())) {
+                $model->role_name = $_POST["Roles"]["role_name"];
+                $model->role_description = $_POST["Roles"]["role_description"];
+                if($model->save()){
+                    return \app\modules\users\classes\Response::responseDisplay()->Success("Success", "success", "Create Roles")->Output(); 
+                }else{
+                    return \app\modules\users\classes\Response::responseDisplay()->Error("Error", "success", "Create Roles")->Output();
+                }     
+            }
+            return $this->renderAjax("update",["model"=>$model]);
+        }
+    }
     public function actionDelete(){
         $id = isset($_POST["id"]) ? $_POST["id"] : "";
         if(\Yii::$app->request->isAjax && !empty(\Yii::$app->request->post())){
