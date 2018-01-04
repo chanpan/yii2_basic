@@ -26,7 +26,7 @@ class Modal {
                         </div>
                         <div class="modal-footer">
                           <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default" id="modal-btn-si">Cancel</button>
-                          <button type="button" class="btn btn-primary" id="modal-btn-no">Ok</button>
+                          <button type="button" class="btn btn-primary" id="ModalBtnOk">Ok</button>
                         </div>
                       </div>
                     </div>

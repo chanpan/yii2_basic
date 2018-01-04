@@ -59,5 +59,18 @@ class UserController extends Controller {
             return $this->renderAjax("update-user", ["model" => $model,"modelProfile"=>$modelProfile]);
         }
     }
+    
+    public function actionDelete() {
+        if (\Yii::$app->request->isAjax && !empty(\Yii::$app->request->post())) {
+            $id = isset($_POST['id']) ? $_POST["id"] : "";
+            $model = \app\modules\users\models\Users::findOne($id);
+            $modelProfile = \app\modules\users\models\Profiles::findOne($id);
+            if ($model->delete() && $modelProfile->delete()) {
+                return \app\modules\users\classes\Response::responseDisplay()->Success("Success", "success", "Delete User")->Output();
+            } else {
+                return \app\modules\users\classes\Response::responseDisplay()->Error("Error", "success", "Delete User")->Output();
+            }
+        }
+    }
 
 }

@@ -49,7 +49,7 @@ $this->title = "Users";
                                 return Html::button('<i class="glyphicon glyphicon-edit"></i> Edit', ["data-id"=>"$model->id","data-url"=> Url::to(["/users/user/update-user"]),"data-toggle"=>"tooltip","title"=>"Edit","class" => "btn btn-warning btn-xs btnEdit"]);
                             },
                             'delete' => function($url, $model, $key) {
-                                return Html::button('<i class="glyphicon glyphicon-trash"></i> Delete', ["data-id"=>"$model->id","data-url"=> Url::to(["/users/user/delete"]),"data-toggle"=>"tooltip","title"=>"Delete","class" => "btn btn-danger btn-xs btnDelete"]);
+                                return Html::button('<i class="glyphicon glyphicon-trash"></i> Delete', ["data-id"=>"$model->id","data-reloadDiv"=>Url::to(['/users/user/get-user']),"data-url"=> Url::to(["/users/user/delete"]),"data-toggle"=>"tooltip","title"=>"Delete","class" => "btn btn-danger btn-xs btnDelete"]);
                             }
                         ]
                     ],
@@ -61,8 +61,8 @@ $this->title = "Users";
 </div>
 
 <?= yii\bootstrap\Modal::widget([
-    'id'=>'modal-user',
+    'id'=>'modal-users',
     'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE]
 ]);?>
 <?= \app\modules\users\classes\Modal::ModalConfirm("Delete?")?>
-<?php $this->render("jsScript")?>
+<?php $this->render("/js/jsScript");?>
