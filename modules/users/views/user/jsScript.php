@@ -6,7 +6,6 @@
     $('[data-toggle=\"tooltip\"]').tooltip(); 
     
     function getUser(){
-       $('#get-user').html('Load data...');
        let url = '".Url::to(['/users/user/get-user'])."';
        $.get(url,function(res){
            $('#get-user').html(res);
@@ -36,7 +35,7 @@
     
     function CloseModal(){
         $('#modal-user').modal('hide');
-        setTimeout(function(){getUser();},1000);
+        setTimeout(function(){getUser();});
     }
  
 ")?>

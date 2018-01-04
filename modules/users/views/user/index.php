@@ -5,12 +5,7 @@
 
 
 <div class="row">
-    <div class="col-md-6">
-        <div id="get-user"></div>
-    </div>
-    <div class="col-md-6">
-        <h1>Study for a recognised undergraduate degree with a British university, fully online!</h1>
-    </div>
+    <div id="get-user"></div>
 </div>
 
 <?php $this->registerJs("
