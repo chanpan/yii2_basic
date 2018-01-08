@@ -13,6 +13,12 @@
         let dataUrl = $('#reloadDiv').attr('data-url');
         $.post(url,formData).done(function(res){
             console.log(res);
+             new Noty({
+                    type: 'success',
+                    theme: 'bootstrap-v3',
+                    layout: 'bottomRight',
+                    text: 'Some notification text'
+             }).show();
             CloseModal(dataUrl);
         }).fail(function(){
             console.log('Server Error.');
@@ -34,6 +40,7 @@
         LoadModal(url,data);
         return false;
     });
+    
     $('.btnDelete').click(function(){
         let id = $(this).attr('data-id');
         let url = $(this).attr('data-url');
@@ -45,6 +52,7 @@
         $('#modal-delete #ModalBtnOk').attr('data-reloadDiv',reloadDiv);
         return false;
     });
+    
     $('#ModalBtnOk').on('click',function(e){
         let url = $(this).attr('data-url');
         let id = $(this).attr('data-id');

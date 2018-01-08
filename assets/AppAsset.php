@@ -21,8 +21,20 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',
+        'noty/noty.css',
+        'noty/bootstrap-v3.css',
+        'noty/bootstrap-v4.css',
+        'noty/light.css',
+        'noty/metroui.css',
+        'noty/mint.css',
+        'noty/nest.css',
+        'noty/relax.css',
+        'noty/semanticui.css',
+        'noty/sunset.css',
+        
     ];
     public $js = [
+        'noty/noty.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

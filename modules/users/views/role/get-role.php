@@ -11,7 +11,7 @@ $this->title = "Roles";
     <div class="panel-heading">
         <div class="panel-title">
             <?= $this->title; ?>
-            <?= Html::button('<i class="glyphicon glyphicon-plus"></i>', ["data-url"=> Url::to(["/users/role/create"]),"class"=>"btn btn-sm btn-success pull-right btnCreate"])?>
+            <?= Html::button('<i class="glyphicon glyphicon-plus"></i>', ["data-toggle" => "tooltip", "title" => "Create","data-url"=> Url::to(["/users/role/create"]),"class"=>"btn btn-sm btn-success pull-right btnCreate"])?>
             <div class="clearfix"></div>
         </div>
     </div>
